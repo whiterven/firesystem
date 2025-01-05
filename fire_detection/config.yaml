@@ -1,0 +1,37 @@
+#config.yaml
+
+camera:
+  device_id: 0
+  resolution:
+    width: 640
+    height: 480
+  fps: 30
+
+detection:
+  fire_threshold: 0.6
+  min_fire_area: 100
+  color_ranges:
+    lower: [0, 50, 50]
+    upper: [20, 255, 255]
+
+alerts:
+  email:
+    enabled: true
+    smtp_server: "smtp.gmail.com"
+    smtp_port: 587
+    sender_email: "your-email@gmail.com"  # Update this
+    sender_password: "your-app-password"   # Update this
+    recipient_emails: ["recipient@email.com"]  # Update this
+
+  twilio:
+    enabled: true
+    account_sid: "your-twilio-account-sid"  # Update this
+    auth_token: "your-twilio-auth-token"    # Update this
+    from_number: "your-twilio-number"       # Update this
+    to_numbers: ["+1234567890"]            # Update this
+
+  cooldown_period: 300  # 5 minutes between alerts
+
+logging:
+  level: "INFO"
+  file_path: "fire_detection.log"
